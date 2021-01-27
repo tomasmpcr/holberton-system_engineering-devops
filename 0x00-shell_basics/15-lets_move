@@ -1,2 +1,2 @@
 #!/bin/bash
-cp [AZ]* /tmp/u
+cp *[AZ]* /tmp/u
