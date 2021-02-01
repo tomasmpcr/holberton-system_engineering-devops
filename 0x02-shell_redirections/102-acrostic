@@ -1,2 +1,2 @@
 #!/bin/bash
-echo `cut -c 1 acro | tr -d "\n"`
+cut -c 1 acro | tr -d "\n" | cut -f 1
