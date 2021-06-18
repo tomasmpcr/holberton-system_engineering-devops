@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# This script is displaying "Holberton School" 10 times and 9 print Hi
+for (( i=1; i<=100; i++ ))
+do
+    m3=$((i%3))
+    m5=$((i%5))
+    if [ $m3 = 0 ] && [ $m5 = 0 ]
+    then
+        echo "FizzBuzz"
+    elif [ $m3 = 0 ]
+    then
+        echo "Fizz"
+    elif [ $m5 = 0 ]
+    then
+        echo "Buzz"
+    else
+        echo $i
+    fi
+done
