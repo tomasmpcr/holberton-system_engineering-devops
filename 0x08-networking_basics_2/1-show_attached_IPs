@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#list ipv4 active
+ip -4 -br addr show | tr -s ' ' | cut -d' ' -f3 | cut -d'/' -f1
