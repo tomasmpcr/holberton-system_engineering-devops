@@ -2,4 +2,4 @@
 #Call scp
 
 apt-get -y install nginx
-mkdir -p /var/www/html/ && echo "Holberton School" > /var/www/html/index.html
+mkdir -p /var/www/html/ && echo "Holberton School for the win!" > /var/www/html/index.html
