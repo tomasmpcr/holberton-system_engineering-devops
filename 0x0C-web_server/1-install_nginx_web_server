@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#Call scp
+
+apt-get -y install nginx
+echo "Holberton School" > /var/www/index.html
