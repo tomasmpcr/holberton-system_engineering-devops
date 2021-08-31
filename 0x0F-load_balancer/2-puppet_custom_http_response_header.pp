@@ -18,6 +18,6 @@ file_line {'add_header':
 }
 
 service { 'nginx':
-    command => 'sudo /usr/bin/service nginx restart',
+    command => 'sudo /usr/sbin/service nginx restart',
     require => File_line['add_header'],
 }
