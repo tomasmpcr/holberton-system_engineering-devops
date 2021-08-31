@@ -9,6 +9,6 @@ sed -i "/server_name _/a \        rewrite ^/redirect_me/ https://www.youtube.com
 sed -i "/location/a \                error_page 404 /error_404.html;\n" /etc/nginx/sites-available/default
 echo "Ceci n'est pas une page" > /var/www/html/error_404.html
 
-sudo sed -i '/# Dif server/a add_header X-Served-By $hostname;\n' /etc/nginx/sites-available/default
+sudo sed -i '/# First attempt to serve request as file, then/a add_header X-Served-By $hostname;\n' /etc/nginx/sites-available/default
 
 sudo service nginx restart
