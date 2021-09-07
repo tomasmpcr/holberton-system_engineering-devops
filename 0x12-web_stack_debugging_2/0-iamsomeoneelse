@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # COMENTARIO ASD
-su $1
+su" $1"
 whoami
-
+exit
