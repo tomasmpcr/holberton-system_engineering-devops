@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 # COMENTARIO ASD
-su" $1"
-whoami
-exit
+sudo -u"$1" whoami
+
