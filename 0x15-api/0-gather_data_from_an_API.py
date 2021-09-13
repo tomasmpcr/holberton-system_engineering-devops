@@ -29,4 +29,4 @@ if __name__ == "__main__":
         total_number_of_task))
 
     for lis in lista:
-        print("\t{}".format(lis))
+        print("\t {}".format(lis))
