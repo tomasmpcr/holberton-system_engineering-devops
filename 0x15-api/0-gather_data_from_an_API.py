@@ -2,10 +2,9 @@
 """DFGSS GSFG SDFGDSF """
 
 
-import sys
-
 if __name__ == "__main__":
     import requests
+    import sys
     r_usuario = requests.get(
         "https://jsonplaceholder.typicode.com/users/{}".format(sys.argv[1])
         ).json()
