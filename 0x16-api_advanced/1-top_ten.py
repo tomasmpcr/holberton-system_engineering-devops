@@ -17,5 +17,5 @@ def top_ten(subreddit):
                 print(conn.json()['data']['children'][i]['data']['title'])
             return
         except IndexError:
-            return None
-    return None
+            print(None)
+    print(None)
