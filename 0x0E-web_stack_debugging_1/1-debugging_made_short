@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-#DFIDJFS
-ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-sudo service nginx start
-rm /run/nginx.pid
-
+#DFIDJFSSFDGHJIFGHISDFHFG
+ln -sfn /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+pkill -1 nginx
