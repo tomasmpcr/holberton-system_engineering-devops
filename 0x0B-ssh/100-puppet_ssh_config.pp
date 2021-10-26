@@ -1,6 +1,13 @@
-# changes conf
-
-exec { 'ssh_config':
-  path    => '/bin',
-  command => 'echo "PasswordAuthentication no" >> /etc/ssh/ssh_config; echo "IdentityFile ~/.ssh/holberton" >> /etc/ssh/ssh_config',
+#AIDFHADISFHADISFH
+file_line { 'change private key':
+  ensure => present,
+  path   => '/etc/ssh/ssh_config',
+  line   => 'IdentityFile ~/.ssh/holberton',
+  match  => 'IdentityFile ~/.ssh/id_rsa',
+}
+file_line { 'no password':
+  ensure => present,
+  path   => '/etc/ssh/ssh_config',
+  match  => 'PasswordAuthentication yes',
+  line   => 'PasswordAuthentication no',
 }
