@@ -1,19 +1,21 @@
-# Nginx install
+# install Nginx
+
 package { 'nginx':
-  ensure => installed,
+    ensure => present,
+    name   => 'nginx',
 }
 
-file { 'index.html':
-  ensure  => present,
-  path    => '/var/www/html/index.html',
-  content => 'Holberton School\n',
+file { 'index':
+    ensure  => present,
+    path    => '/var/www/html/index.html',
+    content => 'Holberton School\n',
 }
 
-file_line { 'file':
-  ensure => 'present',
-  path   => '/etc/nginx/sites-available/default',
-  after  => 'listen 80 default_server;',
-  line   => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
+file_line { 'redirect':
+    ensure => present,
+    path   => '/etc/nginx/sites-available/default',
+    after  => 'listen 80 default_server;',
+    line   => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
 }
 
 service { 'nginx':
@@ -21,5 +23,5 @@ service { 'nginx':
   enable     => true,
   hasrestart => true,
   require    => Package['nginx'],
-  subscribe  => File_line['file'],
+  subscribe  => File_line['redirect'],
 }
