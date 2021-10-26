@@ -1,21 +1,22 @@
 #!/usr/bin/python3
-"""
-    ADSFJSDIFJISDKFGJSIDKGJDSIKGJNFDSIK
-"""
-
+""" FSJDGISDJFGSD  FJSDFFIJDSFDS dsf DSFSDIF DSIFJDIS FSDNFDSIJFISDJF """
 import requests
 
 
-def top_ten(subreddit):
-    """ DASFGKSOGJNMSDFIKOGJSDFGJDS """
-    url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
-    headers = {'User-agent': 'PIBE'}
-    conn = requests.get(url, headers=headers, allow_redirects=False)
-    if conn.status_code == 200:
-        try:
-            for i in range(10):
-                print(conn.json()['data']['children'][i]['data']['title'])
-            return
-        except IndexError:
-            print(None)
-    print(None)
+def recurse(subreddit, hot_list=[], next_page=''):
+    """ SGJISFJSDFJSDIJFNDIKSJNFIKSDFSDFD FADJSJN """
+    page = 'https://www.reddit.com/r/{}/hot.json?after={}'.format(
+        subreddit, next_page)
+    req = requests.get(page, headers={"User-Agent": "Mozilla/5.0"},
+                       allow_redirects=False)
+    json_req = req.json()
+    if req.status_code != 200:
+        return None
+    else:
+        posts = json_req.get('data').get('children')
+        for title in posts:
+            hot_list.append(title.get('data').get('title'))
+        next_page = json_req.get('data').get('after')
+        if next_page is not None:
+            recurse(subreddit, hot_list, next_page)
+        return hot_list
