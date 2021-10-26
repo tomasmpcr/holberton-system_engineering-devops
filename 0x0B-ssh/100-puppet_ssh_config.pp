@@ -1,11 +1,12 @@
 #AIDFHADISFHADISFH
-file_line { 'change private key':
+file_line { 'cpk':
   ensure => present,
   path   => '/etc/ssh/ssh_config',
   line   => 'IdentityFile ~/.ssh/holberton',
-  match  => 'IdentityFile ~/.ssh/id_rsa',
+  match  => 'IdentityFile ~/.ssh/holberton.pub',
 }
-file_line { 'no password':
+
+file_line { 'np':
   ensure => present,
   path   => '/etc/ssh/ssh_config',
   match  => 'PasswordAuthentication yes',
