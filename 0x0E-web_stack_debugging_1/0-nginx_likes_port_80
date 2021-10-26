@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 #SDFSDF
+sudo apt-get update
+sudo apt-get install -y nginx
+
 rm /etc/nginx/sites-enabled/default
 ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled
 service nginx restart
